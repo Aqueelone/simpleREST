@@ -17,10 +17,7 @@ import pro.keenetic.okoswaroga.api.entity.api.DefaultApi;
 import pro.keenetic.okoswaroga.api.entity.model.NewPet;
 import pro.keenetic.okoswaroga.api.entity.model.Pet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for DefaultApi

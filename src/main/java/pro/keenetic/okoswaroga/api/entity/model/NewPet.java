@@ -12,14 +12,10 @@
 
 package pro.keenetic.okoswaroga.api.entity.model;
 
-import java.util.Objects;
-
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.util.Objects;
 
 /**
  * NewPet
@@ -111,4 +107,29 @@ public class NewPet {
     return o.toString().replace("\n", "\n    ");
   }
 
+  public static final class NewPetBuilder {
+    private NewPet newPet;
+
+    private NewPetBuilder() {
+      newPet = new NewPet();
+    }
+
+    public static NewPetBuilder aNewPet() {
+      return new NewPetBuilder();
+    }
+
+    public NewPetBuilder withName(String name) {
+      newPet.setName(name);
+      return this;
+    }
+
+    public NewPetBuilder withTag(String tag) {
+      newPet.setTag(tag);
+      return this;
+    }
+
+    public NewPet build() {
+      return newPet;
+    }
+  }
 }
