@@ -12,13 +12,10 @@
 
 package pro.keenetic.okoswaroga.api.entity;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.api.DefaultApi;
-import io.swagger.client.model.Error;
-import io.swagger.client.model.NewPet;
-import io.swagger.client.model.Pet;
 import org.junit.Test;
-import org.junit.Ignore;
+import pro.keenetic.okoswaroga.api.entity.api.DefaultApi;
+import pro.keenetic.okoswaroga.api.entity.model.NewPet;
+import pro.keenetic.okoswaroga.api.entity.model.Pet;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +25,6 @@ import java.util.Map;
 /**
  * API tests for DefaultApi
  */
-@Ignore
 public class DefaultApiTest {
 
     private final DefaultApi api = new DefaultApi();
