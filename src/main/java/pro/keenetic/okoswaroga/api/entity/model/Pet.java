@@ -20,30 +20,46 @@ import java.util.Objects;
 /**
  * Pet
  */
-
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-10-05T22:25:43.411501300+03:00[Europe/Helsinki]")
 public class Pet extends NewPet {
   @SerializedName("id")
   private Long id = null;
 
+  /**
+   * Instantiates a new Pet.
+   *
+   * @param petId the pet id
+   */
   public Pet(Integer petId) {
     this.id = petId.longValue();
   }
 
+  /**
+   * Id pet.
+   *
+   * @param id the id
+   * @return the pet
+   */
   public Pet id(Long id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
-   * @return id
-  **/
+   *
+   * @return id id
+   */
   @Schema(required = true, description = "")
   public Long getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(Long id) {
     this.id = id;
   }

@@ -8,10 +8,20 @@ import java.util.List;
 
 import static spark.Spark.*;
 
+/**
+ * The type Pet controller.
+ */
 public class PetController {
     private final ObjectMapper om = new ObjectMapper();
     private String welcome = "";
 
+    /**
+     * Instantiates a new Pet controller.
+     *
+     * @param port       the port
+     * @param welcome    the welcome
+     * @param petService the pet service
+     */
     public PetController(int port, String welcome, PetService petService) {
         this.welcome = welcome;
         // Start embedded server at this port
