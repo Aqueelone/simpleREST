@@ -20,7 +20,6 @@ import java.util.Objects;
 /**
  * Error
  */
-
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-10-05T22:25:43.411501300+03:00[Europe/Helsinki]")
 public class Error {
   @SerializedName("code")
@@ -29,38 +28,62 @@ public class Error {
   @SerializedName("message")
   private String message = null;
 
+  /**
+   * Code error.
+   *
+   * @param code the code
+   * @return the error
+   */
   public Error code(Integer code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Get code
-   * @return code
-  **/
+   *
+   * @return code code
+   */
   @Schema(required = true, description = "")
   public Integer getCode() {
     return code;
   }
 
+  /**
+   * Sets code.
+   *
+   * @param code the code
+   */
   public void setCode(Integer code) {
     this.code = code;
   }
 
+  /**
+   * Message error.
+   *
+   * @param message the message
+   * @return the error
+   */
   public Error message(String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Get message
-   * @return message
-  **/
+   *
+   * @return message message
+   */
   @Schema(required = true, description = "")
   public String getMessage() {
     return message;
   }
 
+  /**
+   * Sets message.
+   *
+   * @param message the message
+   */
   public void setMessage(String message) {
     this.message = message;
   }

@@ -5,6 +5,9 @@ import org.hibernate.cfg.Configuration;
 
 import java.io.File;
 
+/**
+ * The type Hibernate util.
+ */
 public class HibernateUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
@@ -21,10 +24,18 @@ public class HibernateUtil {
         }
     }
 
+    /**
+     * Gets session factory.
+     *
+     * @return the session factory
+     */
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 
+    /**
+     * Shutdown.
+     */
     public static void shutdown() {
         // Close caches and connection pools
         getSessionFactory().close();

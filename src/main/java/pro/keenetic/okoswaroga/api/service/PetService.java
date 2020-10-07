@@ -5,21 +5,31 @@ import pro.keenetic.okoswaroga.api.HibernateUtil;
 import pro.keenetic.okoswaroga.api.entity.model.NewPet;
 import pro.keenetic.okoswaroga.api.entity.model.PetEntry;
 
-import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.List;
 
 import static pro.keenetic.okoswaroga.api.entity.model.NewPet.NewPetBuilder.aNewPet;
 
+/**
+ * The type Pet service.
+ */
 public class PetService {
     private static Session session;
 
+    /**
+     * Instantiates a new Pet service.
+     */
     public PetService() {
     }
 
+    /**
+     * Add pet entry.
+     *
+     * @param name the name
+     * @param tag  the tag
+     * @return the pet entry
+     */
     public PetEntry add(String name, String tag) {
         session = HibernateUtil.getSessionFactory().openSession();
         NewPet newPet = aNewPet().withName(name).withTag(tag).build();
@@ -31,6 +41,12 @@ public class PetService {
         return petEntry;
     }
 
+    /**
+     * Find by id pet entry.
+     *
+     * @param params the params
+     * @return the pet entry
+     */
     public PetEntry findById(String params) {
         session = HibernateUtil.getSessionFactory().openSession();
         PetEntry petEntry = session.get(PetEntry.class, Integer.valueOf(params));
@@ -38,6 +54,11 @@ public class PetService {
         return petEntry;
     }
 
+    /**
+     * Find all list.
+     *
+     * @return the list
+     */
     public List<PetEntry> findAll() {
         session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();
@@ -50,6 +71,14 @@ public class PetService {
         return petEntry;
     }
 
+    /**
+     * Update boolean.
+     *
+     * @param id   the id
+     * @param name the name
+     * @param tag  the tag
+     * @return the boolean
+     */
     public boolean update(String id, String name, String tag) {
         boolean r = false;
         session = HibernateUtil.getSessionFactory().openSession();
@@ -62,13 +91,19 @@ public class PetService {
             session.getTransaction().commit();
             r = true;
         }
-        catch(PersistenceException e){
+        catch(RuntimeException e){
             session.getTransaction().rollback();
         }
         session.close();
         return r;
     }
 
+    /**
+     * Delete boolean.
+     *
+     * @param id the id
+     * @return the boolean
+     */
     public boolean delete(String id) {
         boolean r = false;
         session = HibernateUtil.getSessionFactory().openSession();
@@ -79,7 +114,7 @@ public class PetService {
             session.getTransaction().commit();
             r = true;
         }
-        catch(PersistenceException e){
+        catch(RuntimeException e){
             session.getTransaction().rollback();
         }
         session.close();
