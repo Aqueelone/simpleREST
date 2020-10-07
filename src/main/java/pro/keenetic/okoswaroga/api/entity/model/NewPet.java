@@ -20,7 +20,6 @@ import java.util.Objects;
 /**
  * NewPet
  */
-
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-10-05T22:25:43.411501300+03:00[Europe/Helsinki]")
 public class NewPet {
   @SerializedName("name")
@@ -29,38 +28,62 @@ public class NewPet {
   @SerializedName("tag")
   private String tag = null;
 
+  /**
+   * Name new pet.
+   *
+   * @param name the name
+   * @return the new pet
+   */
   public NewPet name(String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
-   * @return name
-  **/
+   *
+   * @return name name
+   */
   @Schema(required = true, description = "")
   public String getName() {
     return name;
   }
 
+  /**
+   * Sets name.
+   *
+   * @param name the name
+   */
   public void setName(String name) {
     this.name = name;
   }
 
+  /**
+   * Tag new pet.
+   *
+   * @param tag the tag
+   * @return the new pet
+   */
   public NewPet tag(String tag) {
     this.tag = tag;
     return this;
   }
 
-   /**
+  /**
    * Get tag
-   * @return tag
-  **/
+   *
+   * @return tag tag
+   */
   @Schema(description = "")
   public String getTag() {
     return tag;
   }
 
+  /**
+   * Sets tag.
+   *
+   * @param tag the tag
+   */
   public void setTag(String tag) {
     this.tag = tag;
   }
@@ -107,6 +130,9 @@ public class NewPet {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * The type New pet builder.
+   */
   public static final class NewPetBuilder {
     private NewPet newPet;
 
@@ -114,20 +140,42 @@ public class NewPet {
       newPet = new NewPet();
     }
 
+    /**
+     * A new pet new pet builder.
+     *
+     * @return the new pet builder
+     */
     public static NewPetBuilder aNewPet() {
       return new NewPetBuilder();
     }
 
+    /**
+     * With name new pet builder.
+     *
+     * @param name the name
+     * @return the new pet builder
+     */
     public NewPetBuilder withName(String name) {
       newPet.setName(name);
       return this;
     }
 
+    /**
+     * With tag new pet builder.
+     *
+     * @param tag the tag
+     * @return the new pet builder
+     */
     public NewPetBuilder withTag(String tag) {
       newPet.setTag(tag);
       return this;
     }
 
+    /**
+     * Build new pet.
+     *
+     * @return the new pet
+     */
     public NewPet build() {
       return newPet;
     }
